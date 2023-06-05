@@ -53,7 +53,6 @@ pipeline {
                 echo 'Deploying to production environmnent...'
                 }
             }
-        poll scm
         }
     }
 
