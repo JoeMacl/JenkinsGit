@@ -11,6 +11,7 @@ pipeline {
                         mail to: 'joemac3035@gmail.com',
                         subject: 'Build status email',
                         body: 'Build successful'
+                        attachlog : true
                     }
             }
         }
@@ -52,6 +53,7 @@ pipeline {
                 echo 'Deploying to production environmnent...'
                 }
             }
+        poll scm
         }
     }
 
