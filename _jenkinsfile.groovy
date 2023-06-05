@@ -45,13 +45,13 @@ pipeline {
                 echo 'Deploying to production environmnent...'
                 }
             }
+            post {
+                always {
+                        emailext attachLog: true, body: 'Pipeline finished', subject: 'Pipeline status: ${currentBuild.currentResult}', to: 'joemac3035@gmail.com'
+                    }
+    
         }
     }
 
-    post {
-            always {
-                        emailext attachLog: true, body: 'Pipeline finished', subject: 'Pipeline status: ${currentBuild.currentResult}', to: 'joemac3035@gmail.com'
-                    }
-            }
-
+    
     
