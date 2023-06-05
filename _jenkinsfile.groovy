@@ -11,6 +11,7 @@ pipeline {
                         mail to: 'joemac3035@gmail.com',
                         subject: 'Build status email',
                         body: 'Build successful'
+                        emailext attachLog: true, body: '', subject: ''
                     }
             }
         }
