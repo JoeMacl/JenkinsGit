@@ -44,16 +44,14 @@ pipeline {
             steps {
                 echo 'Deploying to production environmnent...'
                 }
-            post {
-            success {
-                        mail to: 'joemac3035@gmail.com',
-                        subject: 'Build status email',
-                        body: 'Build successful'
+            }
+        }
+    }
+
+    post {
+            always {
                         emailext attachLog: true, body: 'Pipeline finished', subject: 'Pipeline status: ${currentBuild.currentResult}', to: 'joemac3035@gmail.com'
                     }
             }
-            
-        }
-    }
 
     
